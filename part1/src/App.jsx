@@ -1,8 +1,19 @@
 import Header from './components/Header'
 import Content from './components/Content'
 import Total from './components/Total'
+import { useState } from 'react' 
+import Display from './components/Display'
+import Button from './components/Button'
 
 const App = () => {
+  const [counter, setCounter] = useState(0)
+  //console.log('rendering...', counter)
+  const increaseByOne  = () => {
+    setCounter(counter + 1)
+  }
+  const decreaseByOne = () => setCounter(counter - 1)
+  const setToZero = () => setCounter(0)
+
   {/* Agrupamos todo en un unico objeto*/}
   const course = {
     name: 'Half Stack application development',
@@ -34,6 +45,22 @@ const App = () => {
       {/* A nuestro componente ahora solo le pasamos un valor que es el array*/}
       <Content parts={course.parts} />
       <Total parts={course.parts} />
+      <Display counter={counter} />
+      
+
+
+      <Button
+        onClick={increaseByOne}
+        text='plus'
+      />
+      <Button
+        onClick={setToZero}
+        text='zero'
+      />     
+      <Button
+        onClick={decreaseByOne}
+        text='minus'
+      />      
     </div>
   )
 }
