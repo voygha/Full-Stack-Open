@@ -3,31 +3,37 @@ import Content from './components/Content'
 import Total from './components/Total'
 
 const App = () => {
-  const course = 'Half Stack application development'
-  {/* Agrupar las constantes en un arreglo */ }
-  {/* En lugar de ser 3 Constantes ahora es solo una */ }
-  const parts = [
-    // Agrupar por objetos dentro del array
-    {
-      name: 'Fundamentals of React',
-      exercises: 10
-    },
-    {
-      name: 'Using props to pass data',
-      exercises: 7
-    },
-    {
-      name: 'State of a component',
-      exercises: 14
-    }
-  ]
+  {/* Agrupamos todo en un unico objeto*/}
+  const course = {
+    name: 'Half Stack application development',
+    /* Agrupar las constantes en un arreglo */
+    /* En lugar de ser 3 Constantes ahora es solo una */
+    parts: [
+      // Agrupar por objetos dentro del array
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
+  }
   //console.log(parts[0].exercises)
   return (
     <div>
-      <Header course={course} />
+      {/* Al Header unicamente le pasamos destructurado el titulo como parametro para no pasarle todo el objeto*/}
+      {/* Al final lo que nos interesa para el Header sera el nombre del curso */}
+      <Header course={course.name} />
+      {/* Lo mismo pasa con contenido y con total, lo que nos interesa pasarle a los componentes solo es el array de parts dentro del objeto course*/}
       {/* A nuestro componente ahora solo le pasamos un valor que es el array*/}
-      <Content parts ={parts} />
-      <Total parts ={parts} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
     </div>
   )
 }
