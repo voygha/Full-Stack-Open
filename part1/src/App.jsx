@@ -4,26 +4,30 @@ import Total from './components/Total'
 
 const App = () => {
   const course = 'Half Stack application development'
-  {/* Modificacion de las constantes */}
-  const part1 = {
-    name: 'Fundamentals of React',
-    exercises: 10
-  }
-  const part2 = {
-    name: 'Using props to pass data',
-    exercises: 7
-  }
-  const part3 = {
-    name: 'State of a component',
-    exercises: 14
-  }
-
+  {/* Agrupar las constantes en un arreglo */ }
+  {/* En lugar de ser 3 Constantes ahora es solo una */ }
+  const parts = [
+    // Agrupar por objetos dentro del array
+    {
+      name: 'Fundamentals of React',
+      exercises: 10
+    },
+    {
+      name: 'Using props to pass data',
+      exercises: 7
+    },
+    {
+      name: 'State of a component',
+      exercises: 14
+    }
+  ]
+  //console.log(parts[0].exercises)
   return (
     <div>
       <Header course={course} />
-      {/* Refactorizacion del componente */}
-      <Content part1={part1} part2={part2} part3={part3} />
-      <Total exercises1={part1.exercises} exercises2={part2.exercises} exercises3={part3.exercises}/>
+      {/* A nuestro componente ahora solo le pasamos un valor que es el array*/}
+      <Content parts ={parts} />
+      <Total parts ={parts} />
     </div>
   )
 }
