@@ -1,20 +1,44 @@
 import Header from './components/Header'
 import Content from './components/Content'
 import Total from './components/Total'
-import { useState } from 'react' 
+import { useState } from 'react'
 import Display from './components/Display'
 import Button from './components/Button'
 
 const App = () => {
   const [counter, setCounter] = useState(0)
   //console.log('rendering...', counter)
-  const increaseByOne  = () => {
+  const increaseByOne = () => {
     setCounter(counter + 1)
   }
   const decreaseByOne = () => setCounter(counter - 1)
   const setToZero = () => setCounter(0)
 
-  {/* Agrupamos todo en un unico objeto*/}
+
+  const [left, setLeft] = useState(0)
+  const [right, setRight] = useState(0)
+
+
+  const [allClicks, setAll] = useState([])
+
+  const [total, setTotal] = useState(0)
+
+
+  const handleLeftClick = () => {
+    setAll(allClicks.concat('L'))
+    const updatedLeft = left + 1
+    setLeft(updatedLeft)
+    setTotal(updatedLeft + right)
+  }
+
+  const handleRightClick = () => {
+    setAll(allClicks.concat('R'))
+    const updatedRight = right + 1
+    setRight(updatedRight)
+    setTotal(left + updatedRight)
+  }
+
+  {/* Agrupamos todo en un unico objeto*/ }
   const course = {
     name: 'Half Stack application development',
     /* Agrupar las constantes en un arreglo */
@@ -46,7 +70,7 @@ const App = () => {
       <Content parts={course.parts} />
       <Total parts={course.parts} />
       <Display counter={counter} />
-      
+
 
 
       <Button
@@ -56,11 +80,23 @@ const App = () => {
       <Button
         onClick={setToZero}
         text='zero'
-      />     
+      />
       <Button
         onClick={decreaseByOne}
         text='minus'
-      />      
+      />
+      <br />
+      <br />
+      <div>
+      {left}
+      <button onClick={handleLeftClick}>left</button>
+      <button onClick={handleRightClick}>right</button>
+      {right}
+      <p>{allClicks.join(' ')}</p>
+      <p>total {total}</p>
+      </div>
+
+
     </div>
   )
 }
