@@ -17,3 +17,5 @@ La aplicación debe mostrar el número total de comentarios recopilados para cad
 Tu aplicación final podría verse así:
 
 <img src="./public/unicafe.png" alt="Unicafe" width="700"/>
+
+Ten en cuenta que tu aplicación debe funcionar solo durante una única sesión del navegador. Una vez que se actualice la página, los comentarios recopilados pueden desaparecer.

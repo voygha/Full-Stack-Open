@@ -5,38 +5,38 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.container-btns{
+  padding-top: 2rem;
+  display: flex;
+  gap:10px;
+  justify-content: center;
+  align-items: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container-stadistics{
+  padding-top: 2rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.good{
+  border-color: green;
 }
 
-.card {
-  padding: 2em;
+.neutral{
+  border-color: azure;
 }
 
-.read-the-docs {
-  color: #888;
+.bad{
+  border-color: red;
+}
+
+.good:hover{
+  border-color: greenyellow;
+}
+.neutral:hover{
+  border-color: rgb(198, 187, 226);
+}
+.bad:hover{
+  border-color:rgb(220, 157, 20);
 }
