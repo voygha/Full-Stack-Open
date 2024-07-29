@@ -2,6 +2,27 @@
 import { useState } from 'react'
 import './App.css'
 
+const Stadistics = (props) => {
+  //console.log(props)
+  return (
+    <>
+      <div className="container-stadistics">
+        <h3>Stadistics</h3>
+        <p>Good: {props.good}</p>
+        <p>Neutral: {props.neutral}</p>
+        <p>Bad: {props.bad}</p>
+        <p>Total Comments: {props.total}</p>
+      </div>
+      <div className="container-btns">
+        <p>Total Puntuation: {props.totalPoints}</p>
+        <p>Count: {props.contadorPromedio}</p>
+        <p>Avarage: {props.avarage}</p>
+        <p>Possitive: {props.possitivePercent} %</p>
+      </div>
+    </>
+  )
+}
+
 function App() {
 
   // guarda los clics de cada botón en su propio estado
@@ -99,19 +120,10 @@ function App() {
         <button onClick={handleClickNeutral} className='neutral'>Neutral</button>
         <button onClick={handleClickBad} className='bad'>Bad</button>
       </div>
-      <div className="container-stadistics">
-        <h3>Stadistics</h3>
-        <p>Good: {good}</p>
-        <p>Neutral: {neutral}</p>
-        <p>Bad: {bad}</p>
-        <p>Total Comments: {total}</p>
-      </div>
-      <div className="container-btns">
-        <p>Total Puntuation: {totalPoints}</p>
-        <p>Count: {contadorPromedio}</p>
-        <p>Avarage: {avarage}</p>
-        <p>Possitive: {possitivePercent} %</p>
-      </div>
+      <Stadistics good={good}
+        neutral={neutral} bad={bad} total={total}
+        totalPoints={totalPoints} contadorPromedio={contadorPromedio}
+        avarage={avarage} possitivePercent={possitivePercent} />
     </>
   )
 }
