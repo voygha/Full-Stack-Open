@@ -4,29 +4,8 @@ import Total from './components/Total'
 import { useState } from 'react'
 import Display from './components/Display'
 import Button from './components/Button'
-
-const History = (props) => {
-  if (props.allClicks.length === 0) {
-    return (
-      <div>
-        the app is used by pressing the buttons
-      </div>
-    )
-  }
-  return (
-    <div>
-      button press history: {props.allClicks.join(' ')}
-      <p>total {props.total}</p>
-    </div>
-  )
-}
-
-
-const ButtonDirection = ({ handleClick, text }) => (
-  <button onClick={handleClick}>
-    {text}
-  </button>
-)
+import History from "./components/History";
+import ButtonDirection from './components/ButtonDirection'
 
 const App = () => {
   const [counter, setCounter] = useState(0)
