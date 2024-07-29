@@ -17,18 +17,32 @@ const Stadistics = (props) => {
     <>
       <div className="container-stadistics">
         <h3>Stadistics</h3>
-        <p>Good: {props.good}</p>
-        <p>Neutral: {props.neutral}</p>
-        <p>Bad: {props.bad}</p>
-        <p>Total Comments: {props.total}</p>
+        <StadisticLine text="Good: " value={props.good} />
+        <StadisticLine text="Neutral: " value={props.neutral} />
+        <StadisticLine text="Bad: " value={props.bad} />
+        <StadisticLine text="Total Comments: " value={props.total} />
       </div>
       <div className="container-btns">
-        <p>Total Puntuation: {props.totalPoints}</p>
-        <p>Count: {props.contadorPromedio}</p>
-        <p>Avarage: {props.avarage}</p>
-        <p>Possitive: {props.possitivePercent} %</p>
+        <StadisticLine text="Total Puntuation: " value={props.totalPoints} />
+        <StadisticLine text="Count: " value={props.contadorPromedio} />
+        <StadisticLine text="Avarage: " value={props.avarage} />
+        <StadisticLine text="Possitive: " value={props.possitivePercent} />
       </div>
     </>
+  )
+}
+
+const Button = ({ handleClick, text, classn }) => {
+  return (
+    <>
+      <button onClick={handleClick} className={classn}>{text}</button>
+    </>
+  )
+}
+
+const StadisticLine = (props) => {
+  return (
+    <p>{props.text} {props.value}</p>
   )
 }
 
@@ -125,9 +139,9 @@ function App() {
     <>
       <h1>Give Feedback</h1>
       <div className="container-btns">
-        <button onClick={handleClickGood} className='good'>Good</button>
-        <button onClick={handleClickNeutral} className='neutral'>Neutral</button>
-        <button onClick={handleClickBad} className='bad'>Bad</button>
+        <Button handleClick={handleClickGood} text='Good' classn='good' />
+        <Button handleClick={handleClickNeutral} text='Neutral' classn='neutral' />
+        <Button handleClick={handleClickBad} text='Bad' classn='bad' />
       </div>
       <Stadistics good={good}
         neutral={neutral} bad={bad} total={total}
