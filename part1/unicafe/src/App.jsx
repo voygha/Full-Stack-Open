@@ -4,6 +4,15 @@ import './App.css'
 
 const Stadistics = (props) => {
   //console.log(props)
+  if (props.total === 0) {
+    return (
+      <>
+        <div className="container-stadistics">
+          <h3>No Feedback Given</h3>
+        </div>
+      </>
+    )
+  }
   return (
     <>
       <div className="container-stadistics">
