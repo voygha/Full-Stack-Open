@@ -1,52 +1,11 @@
 
 import { useState } from 'react'
 import './App.css'
-
-const Stadistics = (props) => {
-  //console.log(props)
-  if (props.total === 0) {
-    return (
-      <>
-        <div className="container-stadistics">
-          <h3>No Feedback Given</h3>
-        </div>
-      </>
-    )
-  }
-  return (
-    <>
-      <div className="container-stadistics">
-        <h3>Stadistics</h3>
-        <StadisticLine text="Good: " value={props.good} />
-        <StadisticLine text="Neutral: " value={props.neutral} />
-        <StadisticLine text="Bad: " value={props.bad} />
-        <StadisticLine text="Total Comments: " value={props.total} />
-      </div>
-      <div className="container-btns">
-        <StadisticLine text="Total Puntuation: " value={props.totalPoints} />
-        <StadisticLine text="Count: " value={props.contadorPromedio} />
-        <StadisticLine text="Avarage: " value={props.avarage} />
-        <StadisticLine text="Possitive: " value={props.possitivePercent} />
-      </div>
-    </>
-  )
-}
-
-const Button = ({ handleClick, text, classn }) => {
-  return (
-    <>
-      <button onClick={handleClick} className={classn}>{text}</button>
-    </>
-  )
-}
-
-const StadisticLine = (props) => {
-  return (
-    <p>{props.text} {props.value}</p>
-  )
-}
+import Stadistics from './components/Stadistics'
+import Button from './components/Button'
 
 function App() {
+
 
   // guarda los clics de cada botón en su propio estado
   const [good, setGood] = useState(0)
