@@ -5,8 +5,6 @@ import Stadistics from './components/Stadistics'
 import Button from './components/Button'
 
 function App() {
-
-
   // guarda los clics de cada botón en su propio estado
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
