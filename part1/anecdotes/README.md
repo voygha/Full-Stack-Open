@@ -74,3 +74,7 @@ El uso de un array podría ser la opción más sencilla en este caso. Buscar en 
 Ahora implementa la versión final de la aplicación que muestra la anécdota con el mayor número de votos
 
 Si varias anécdotas empatan en el primer lugar, es suficiente con solo mostrar una de ellas.
+
+# Salida de la Aplicacion
+
+<img src="./public/salida.png" alt="with stadistics" width="900"/>

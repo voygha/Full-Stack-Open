@@ -16,7 +16,8 @@ function App() {
 
   const [selected, setSelected] = useState(0)
 
-
+  //Crear Array con la misma cantidad de indices
+  //Rellenar con ceros para los puntajes
   const [votes, setVotes] = useState(Array(anecdotes.length).fill(0))
 
 
