@@ -15,19 +15,35 @@ function App() {
   ]
 
   const [selected, setSelected] = useState(0)
-  console.log(selected)
+
+
+  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0))
+
+
+  const getVote = () => {
+    console.log("")
+    const newVotes = [...votes];
+    console.log("Antes de modificar el Array " + newVotes)
+    newVotes[selected] += 1;
+    setVotes(newVotes);
+    console.log("Despues de guardar un voto " + newVotes)
+  }
 
   const getIndex = () => {
     const aleatorio = Math.floor(Math.random() * anecdotes.length)
-    console.log(aleatorio);
+    //console.log(aleatorio);
     setSelected(aleatorio)
-    console.log(selected)
+    //console.log(selected)
   }
+
   return (
     <>
       <div className="container-cont-anecdote">
         {anecdotes[selected]}
-        <button onClick={getIndex} className='btn-next'>Next Anecdote</button>
+        <div className="container-btn">
+          <button onClick={getVote} className='btn-vote'>Vote</button>
+          <button onClick={getIndex} className='btn-next'>Next Anecdote</button>
+        </div>
       </div>
     </>
   )

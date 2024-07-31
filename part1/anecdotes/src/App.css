@@ -13,7 +13,14 @@
   align-items: center;
   gap: 10px;
 }
-
+.container-btn{
+  display: flex;
+  gap: 15px;
+}
 .btn-next{
   width: 140px;
+  border-color: coral;
+}
+.btn-vote{
+  border-color: cadetblue;
 }
