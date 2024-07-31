@@ -1,9 +1,7 @@
 
 import './App.css'
 
-function App(props) {
-  const { notes } = props
-
+function App({notes}) {
   return (
     <>
       <div>
