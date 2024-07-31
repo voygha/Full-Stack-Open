@@ -1,13 +1,13 @@
 import Part from "./Part";
 
-const Content = (props) =>{
+const Content = ({parts}) =>{
     //console.log(props)
     return(
         <>
         {/* Componente content Refactorizado */}
-            <Part part={props.parts[0]} />
-            <Part part={props.parts[1]}/>
-            <Part part={props.parts[2]}/>
+            <Part part={parts[0]} />
+            <Part part={parts[1]}/>
+            <Part part={parts[2]}/>
         </>
     )
 }

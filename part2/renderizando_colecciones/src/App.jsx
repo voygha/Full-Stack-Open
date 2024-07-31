@@ -1,5 +1,6 @@
 
 import './App.css'
+import Note from './components/Note'
 
 function App({notes}) {
   return (
@@ -9,7 +10,7 @@ function App({notes}) {
         <ul>
           {notes.map(
             note =>
-              <li key={note.id}>{note.content}</li>
+              <Note key={note.id} note={note} />
           )}
         </ul>
       </div>
