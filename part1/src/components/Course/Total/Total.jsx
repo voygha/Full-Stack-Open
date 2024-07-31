@@ -1,8 +1,15 @@
-const Total = ({parts}) => {
+
+
+const Total = ({ parts }) => {
     //console.log(props)
+    const totalExercises = parts.reduce((total, part) => {
+        return total + part.exercises;
+    }, 0);
+    
+    console.log(totalExercises); // Salida: 42
     return (
         <>
-            <p>Number of exercises {parts[0].exercises + parts[1].exercises + parts[2].exercises + parts[3].exercises}</p>
+            <p>Number of exercises {totalExercises}</p>
         </>
     )
 }
