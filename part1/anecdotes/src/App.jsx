@@ -39,11 +39,14 @@ function App() {
   return (
     <>
       <div className="container-cont-anecdote">
+        <h3>Anecdote of the Day</h3>
         {anecdotes[selected]}
         <div className="container-btn">
           <button onClick={getVote} className='btn-vote'>Vote</button>
           <button onClick={getIndex} className='btn-next'>Next Anecdote</button>
         </div>
+        <h3>Anecdote with most votes</h3>
+        <p>{anecdotes[votes.indexOf(Math.max(...votes))]}</p>
       </div>
     </>
   )
