@@ -1,5 +1,6 @@
 import Header from './Header/Header'
 import Content from './Content/Content'
+import Total from './Total/Total'
 
 const Course = ({ name, parts}) => {
     return (
@@ -10,6 +11,7 @@ const Course = ({ name, parts}) => {
             {/* Lo mismo pasa con contenido y con total, lo que nos interesa pasarle a los componentes solo es el array de parts dentro del objeto course*/}
             {/* A nuestro componente ahora solo le pasamos un valor que es el array*/}
             <Content parts={parts} />
+            <Total parts={parts} />
         </>
     )
 

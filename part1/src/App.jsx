@@ -1,6 +1,3 @@
-
-import Total from './components/Total'
-
 import Course from './components/Course/Course'
 // import { useState } from 'react'
 // import Display from './components/Display'
@@ -60,14 +57,17 @@ const App = () => {
         name: 'State of a component',
         exercises: 14,
         id: 3
+      },
+      {
+        name: 'Redux',
+        exercises: 11,
+        id: 4
       }
     ]
   }
   //console.log(parts[0].exercises)
   return (
     <div>
-      
-      <Total parts={course.parts} />
       <Course name={course.name} parts={course.parts}/>
 
 
