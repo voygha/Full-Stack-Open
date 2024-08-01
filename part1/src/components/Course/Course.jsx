@@ -2,6 +2,7 @@ import Header from './Header/Header'
 import Content from './Content/Content'
 import Total from './Total/Total'
 
+// Componente Course que importa los subcomponentes que lo integran 
 const Course = ({ name, parts}) => {
     return (
         <>

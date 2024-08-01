@@ -5,6 +5,7 @@ const Content = ({parts}) =>{
     return(
         <>
         {/* Componente content Refactorizado */}
+            {/* Mapeo de las parts para recibir un numero arbitrario de datos en las Parts */}
             {parts.map(part =>(
                 <Part key={part.id}  name={part.name} exercise={part.exercise}/>
             ))}
