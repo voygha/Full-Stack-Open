@@ -1,3 +1,4 @@
+import './App.css'
 import Course from './components/Course/Course'
 // import { useState } from 'react'
 // import Display from './components/Display'
@@ -85,7 +86,7 @@ const App = () => {
   ]
   //console.log(parts[0].exercises)
   return (
-    <div>
+    <div className='container'>
       {/* Mapear sobre cada curso y renderizar el componente Course */}
       {courses.map(course => (
         <Course key={course.id} name={course.name} parts={course.parts} />
