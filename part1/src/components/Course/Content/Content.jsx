@@ -5,10 +5,9 @@ const Content = ({parts}) =>{
     return(
         <>
         {/* Componente content Refactorizado */}
-            <Part part={parts[0]} />
-            <Part part={parts[1]}/>
-            <Part part={parts[2]}/>
-            <Part part={parts[3]}/>
+            {parts.map(part =>(
+                <Part key={part.id}  name={part.name} exercise={part.exercise}/>
+            ))}
         </>
     )
 }
