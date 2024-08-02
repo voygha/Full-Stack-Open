@@ -7,15 +7,30 @@ function App() {
     { name: 'Luis Alvarado' }
   ])
   const [newName, setNewName] = useState('')
+
   const addName = (e) =>{
     e.preventDefault()
-    const personObject ={
-      name:newName,
+    
+
+    // Validar si el nombre ya existe en el array persons
+    const nameExists = persons.some(person => person.name.toLowerCase() === newName.toLowerCase())
+
+    if (nameExists) {
+      console.log('valor repetido', newName)
+      alert(`${newName} ya está en la lista!`)
+      return // Salir de la función si el nombre ya existe
+    }
+
+
+    const personObject = {
+      name: newName,
       id: persons.length + 1
     }
+
     setPersons(persons.concat(personObject))
     setNewName('')
-    console.log('Se guardo un nuevo nombre')
+    console.log('Se guardó un nuevo nombre')
+    alert('Nombre añadido correctamente!')
   }
   
   
