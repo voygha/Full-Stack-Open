@@ -8,9 +8,11 @@ function App() {
   ])
   const [newName, setNewName] = useState('')
 
-  const addName = (e) =>{
+  const [newNumber, setNumber] = useState('')
+
+  const addRegister = (e) => {
     e.preventDefault()
-    
+
 
     // Validar si el nombre ya existe en el array persons
     const nameExists = persons.some(person => person.name.toLowerCase() === newName.toLowerCase())
@@ -24,32 +26,51 @@ function App() {
 
     const personObject = {
       name: newName,
+      number: newNumber,
       id: persons.length + 1
     }
 
     setPersons(persons.concat(personObject))
     setNewName('')
-    console.log('Se guardó un nuevo nombre')
-    alert('Nombre añadido correctamente!')
+    setNumber('')
+    console.log('Se guardó un nuevo registro')
+    alert('Registro añadido correctamente!')
   }
-  
-  
-  const handleOnChange = (e) =>{
+
+
+  const nameHandleOnChange = (e) => {
     console.log(e.target.value)
     setNewName(e.target.value)
   }
+
+  const numberHandleOnChange = (e) => {
+    console.log(e.target.value)
+    setNumber(e.target.value)
+  }
+
+  
   return (
     <>
       <h2>Phonebook</h2>
-      <form onSubmit={addName}>
-        <div>debug: {newName}</div>
+      <form onSubmit={addRegister}>
+        <div>Name debug: {newName}</div>
+        <div>Number debug: {newNumber}</div>
         <div>
           name: 
           <input 
           value={newName}
-          onChange={handleOnChange}
+          onChange={nameHandleOnChange}
           />
         </div>
+
+        <div>
+          name: 
+          <input 
+          value={newNumber}
+          onChange={numberHandleOnChange}
+          />
+        </div>
+
         <div>
           <button type='submit'>Add</button>
           <h2>Numbers</h2>
